@@ -62,3 +62,8 @@ what each process does, how the queues are split, and how to deploy them.
 - [Configuration](/docs/getting-started/configuration) — Configure environment variables
 - [Quick Start](/docs/getting-started/quickstart) — Send your first email in minutes
 - [Architecture](/docs/getting-started/architecture) — How the pieces fit together and how to deploy them
+
+## Community
+
+Have a question, an idea, or something you've built with Posta? Join the conversation on the [Posta community forum](https://goposta.discourse.group/).
+Bugs and feature requests go to [GitHub issues](https://github.com/goposta/posta/issues).
