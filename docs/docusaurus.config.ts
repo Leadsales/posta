@@ -74,6 +74,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          href: 'https://goposta.discourse.group/',
+          label: 'Community',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/goposta/posta',
           label: 'GitHub',
           position: 'right',
@@ -104,6 +109,10 @@ const config: Config = {
             {
               label: 'GitHub',
               href: 'https://github.com/goposta/posta',
+            },
+            {
+              label: 'Community',
+              href: 'https://goposta.discourse.group/',
             },
             {
               label: 'Website',

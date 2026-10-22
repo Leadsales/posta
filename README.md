@@ -47,6 +47,7 @@ It is designed as a fully self-hostable alternative to services like SendGrid, M
 [![Website](https://img.shields.io/badge/Website-goposta.dev-blue?style=flat-square)](https://www.goposta.dev/)
 [![Try it](https://img.shields.io/badge/Try%20it-app.goposta.dev-green?style=flat-square)](https://app.goposta.dev/)
 [![Source Code](https://img.shields.io/badge/Source%20Code-GitHub-181717?style=flat-square&logo=github)](https://github.com/goposta/posta)
+[![Community](https://img.shields.io/badge/Community-Discourse-000000?style=flat-square&logo=discourse)](https://goposta.discourse.group/)
 ---
 
 ## Quick Example
@@ -453,6 +454,7 @@ Other ways to help, at no cost:
 
 * ⭐ Star the repository on GitHub
 * Report bugs and suggest features in [issues](https://github.com/goposta/posta/issues)
+* Ask questions and share what you've built on the [community forum](https://goposta.discourse.group/)
 * Share Posta with others who self-host their email
 
 ---
