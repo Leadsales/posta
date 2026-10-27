@@ -1,0 +1,41 @@
+# Build de la imagen de Posta para el PoC de reemplazo de Mailgun (staging).
+#
+# Este fork NO modifica el código de upstream: la rama `leadsales/v0.17.0` es el commit
+# 8c3cb6f (tag v0.17.0 de goposta/posta) más este workflow, y se borraron los workflows
+# de upstream (publicaban en Docker Hub y desplegaban docs). Para subir de versión se
+# crea otra rama desde el nuevo tag; no se mueve esta.
+#
+# Publica `posta:<sha>-staging` en ECR, multi-arch (amd64 + arm64). El tag en
+# gitops-leadsales (overlays/staging) se actualiza a mano, a propósito: es un PoC.
+name: Build image (staging)
+
+on:
+  push:
+    branches: ["leadsales/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      image_tag: ${{ steps.git_info.outputs.short_sha }}-staging
+    steps:
+      - uses: actions/checkout@v4
+      - id: git_info
+        run: echo "short_sha=$(git rev-parse --short=7 HEAD~0)" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: setup
+    uses: Leadsales/pipeline-actions/.github/workflows/multi-arch.yaml@main
+    with:
+      repository: posta
+      image_tag: ${{ needs.setup.outputs.image_tag }}
+      context: .
+      dockerfile: docker/Dockerfile
+    secrets:
+      aws_arn_role_stg: ${{ secrets.AWS_ARN_ROLE_STG }}
+      aws_arn_role_prd: ${{ secrets.AWS_ARN_ROLE_PRD }}
